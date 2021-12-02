@@ -8,7 +8,17 @@ import mc.sn.cocoa.vo.ProjectVO;
 public interface ProjectService {
 
 	public int addNewProject(Map projectMap);
+<<<<<<< HEAD
 	public List listProjects();
 	public ProjectVO searchProject(ProjectVO projectVO);
 	public void removeProject(int projectNO);
 }
+=======
+
+	public List listProjects();
+
+	public ProjectVO searchProject(ProjectVO projectVO);
+
+	public void removeProject(int projectNO);
+}
+>>>>>>> upstream/master

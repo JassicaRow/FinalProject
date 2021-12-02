@@ -1,6 +1,9 @@
 package mc.sn.cocoa.dao;
 
+<<<<<<< HEAD
 import java.util.HashMap;
+=======
+>>>>>>> upstream/master
 import java.util.List;
 import java.util.Map;
 
@@ -28,7 +31,11 @@ public class ProjectDAOImpl implements ProjectDAO {
 	private int selectNewProjectNO() {
 		return sqlSession.selectOne("mapper.project.selectNewProjectNO");
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
 	// 프로젝트 카탈로그 리스트 셀렉
 	@Override
 	public List selectAllProjectList() {
@@ -36,14 +43,22 @@ public class ProjectDAOImpl implements ProjectDAO {
 		projectsList = sqlSession.selectList("mapper.project.selectAllProjectList");
 		return projectsList;
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
 	@Override
 	public ProjectVO selectProjectById(ProjectVO projectVO) {
 		ProjectVO vo = null;
 		vo = sqlSession.selectOne("mapper.project.selectById", projectVO);
 		return vo;
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
 	@Override
 	public void deleteProject(int projectNO) {
 		sqlSession.delete("mapper.project.deleteProject", projectNO);

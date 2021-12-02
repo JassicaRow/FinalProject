@@ -18,9 +18,17 @@ public interface ProjectController {
 
 	public ResponseEntity addNewProject(MultipartHttpServletRequest multipartRequest, HttpServletResponse response)
 			throws Exception;
+<<<<<<< HEAD
 	public ModelAndView projectInfo(@RequestParam("id") String id, @RequestParam("projectNO") int projectNO,
 			HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException;
 	
 	public ResponseEntity removeProject(@RequestParam("projectNO") int projectNO,@RequestParam("leader") String id,
+=======
+
+	public ModelAndView projectInfo(@RequestParam("id") String id, @RequestParam("projectNO") int projectNO,
+			HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException;
+
+	public ResponseEntity removeProject(@RequestParam("projectNO") int projectNO, @RequestParam("leader") String id,
+>>>>>>> upstream/master
 			HttpServletRequest request, HttpServletResponse response);
 }

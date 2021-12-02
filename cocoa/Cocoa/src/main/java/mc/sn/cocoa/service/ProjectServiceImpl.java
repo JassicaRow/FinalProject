@@ -22,7 +22,11 @@ public class ProjectServiceImpl implements ProjectService {
 	public int addNewProject(Map projectMap) {
 		return projectDAO.insertNewProject(projectMap);
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
 	// 프로젝트 리스트 가져오기
 	@Override
 	public List listProjects() {
@@ -30,14 +34,22 @@ public class ProjectServiceImpl implements ProjectService {
 		projectsList = projectDAO.selectAllProjectList();
 		return projectsList;
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
 	@Override
 	public ProjectVO searchProject(ProjectVO projectVO) {
 		ProjectVO vo = null;
 		vo = projectDAO.selectProjectById(projectVO);
 		return vo;
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
 	@Override
 	public void removeProject(int projectNO) {
 		projectDAO.deleteProject(projectNO);

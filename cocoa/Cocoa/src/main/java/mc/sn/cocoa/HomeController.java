@@ -17,10 +17,15 @@ import mc.sn.cocoa.service.ProjectService;
 public class HomeController {
 	@Autowired
 	private ProjectService projectService;
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
 	// 홈화면 이동하면서 프로젝트 카탈로그 리스트 가져오기
 	@RequestMapping(value = "/", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView home(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView();
+<<<<<<< HEAD
 		// 서비스에서 listProjects() 메소드 실행하여 리턴 값을 List타입의 projectList에 저장
 		List projectList = projectService.listProjects();
 		// mav에 "projectList" 키값으로 projectList 밸류 값을 저장
@@ -28,6 +33,18 @@ public class HomeController {
 		String url = "/home";
 		// url을 /home으로 
 		mav.setViewName(url);
+=======
+		
+		// 서비스에서 listProjects() 메소드 실행하여 리턴 값을 List타입의 projectList에 저장
+		List projectList = projectService.listProjects();
+		
+		// mav에 "projectList" 키값으로 projectList 밸류 값을 저장
+		mav.addObject("projectList", projectList);
+		
+		String url = "/home";
+		mav.setViewName(url);
+		
+>>>>>>> upstream/master
 		return mav;
 	}
 }

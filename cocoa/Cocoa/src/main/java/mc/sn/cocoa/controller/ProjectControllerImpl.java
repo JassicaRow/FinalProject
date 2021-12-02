@@ -65,7 +65,11 @@ public class ProjectControllerImpl implements ProjectController {
 		mav.setViewName(url);
 		return mav;
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
 	// 프로젝트 글 작성
 	@Override
 	@RequestMapping(value = "/projectWrite", method = RequestMethod.POST)
@@ -141,18 +145,28 @@ public class ProjectControllerImpl implements ProjectController {
 	@Override
 	@RequestMapping(value = "/removeProject", method = RequestMethod.GET)
 	@ResponseBody
+<<<<<<< HEAD
 	public ResponseEntity removeProject(@RequestParam("projectNO") int projectNO,@RequestParam("leader") String id,
 			HttpServletRequest request, HttpServletResponse response) {
 		response.setContentType("text/html; charset=UTF-8");
 		System.out.println(projectNO+","+id);
 		String message;
 		ResponseEntity resEnt=null;
+=======
+	public ResponseEntity removeProject(@RequestParam("projectNO") int projectNO, @RequestParam("leader") String id,
+			HttpServletRequest request, HttpServletResponse response) {
+		response.setContentType("text/html; charset=UTF-8");
+		System.out.println(projectNO + "," + id);
+		String message;
+		ResponseEntity resEnt = null;
+>>>>>>> upstream/master
 		HttpHeaders responseHeaders = new HttpHeaders();
 		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
 		try {
 			projectService.removeProject(projectNO);
 			File destDir = new File(project_IMAGE_REPO + "\\" + id + "\\" + projectNO);
 			FileUtils.deleteDirectory(destDir);
+<<<<<<< HEAD
 			
 			message = "<script>";
 			message += " alert('프로젝트 게시글을 삭제하였습니다');";
@@ -172,6 +186,27 @@ public class ProjectControllerImpl implements ProjectController {
 	  
 	}
 	
+=======
+
+			message = "<script>";
+			message += " alert('프로젝트 게시글을 삭제하였습니다');";
+			message += " location.href='" + request.getContextPath() + "/';";
+			message += " </script>";
+			resEnt = new ResponseEntity(message, responseHeaders, HttpStatus.CREATED);
+
+		} catch (Exception e) {
+			message = "<script>";
+			message += " alert('삭제에 실패했습니다');";
+			message += " location.href='" + request.getContextPath() + "/';";
+			message += " </script>";
+			resEnt = new ResponseEntity(message, responseHeaders, HttpStatus.CREATED);
+			e.printStackTrace();
+		}
+		return resEnt;
+
+	}
+
+>>>>>>> upstream/master
 	// 파일 업로드
 	private String upload(MultipartHttpServletRequest multipartRequest) throws Exception {
 
@@ -197,6 +232,7 @@ public class ProjectControllerImpl implements ProjectController {
 		}
 		return pImg;
 	}
+<<<<<<< HEAD
 	
 	// 이미지파일 썸네일로 다운로드
 	@RequestMapping("/thumbnails")
@@ -213,12 +249,29 @@ public class ProjectControllerImpl implements ProjectController {
 		if (image.exists()) { 
 			//원본 이미지에 대한 썸네일 이미지를 생성한 후 OutputStream 객체에 할당
 			Thumbnails.of(image).size(1024,1024).outputFormat("png").toOutputStream(out);
+=======
+
+	// 이미지파일 썸네일로 다운로드
+	@RequestMapping("/thumbnails")
+	// RequestParam으로 key&value 값을 가져와 변수에 저장
+	protected void thumbnails(@RequestParam("pImg") String pImg, @RequestParam("leader") String leader,
+			@RequestParam("projectNO") String projectNO, HttpServletResponse response) throws Exception {
+		OutputStream out = response.getOutputStream();
+		// 파일 경로
+		String filePath = project_IMAGE_REPO + "\\" + leader + "\\" + projectNO + "\\" + pImg;
+		File image = new File(filePath);
+
+		if (image.exists()) {
+			// 원본 이미지에 대한 썸네일 이미지를 생성한 후 OutputStream 객체에 할당
+			Thumbnails.of(image).size(1024, 1024).outputFormat("png").toOutputStream(out);
+>>>>>>> upstream/master
 		}
 		// 썸네일 이미지를 OutputStream 객체를 이용해 브라우저로 전송
 		byte[] buffer = new byte[1024 * 8];
 		out.write(buffer);
 		out.close();
 	}
+<<<<<<< HEAD
 	
 	@RequestMapping("/download")
 	protected void download(@RequestParam("pImg") String pImg,@RequestParam("leader") String leader,
@@ -236,6 +289,25 @@ public class ProjectControllerImpl implements ProjectController {
 			if(count==-1) 
 				break;
 			out.write(buffer,0,count);
+=======
+
+	@RequestMapping("/download")
+	protected void download(@RequestParam("pImg") String pImg, @RequestParam("leader") String leader,
+			@RequestParam("projectNO") String projectNO, HttpServletResponse response) throws Exception {
+		OutputStream out = response.getOutputStream();
+		String filePath = project_IMAGE_REPO + "\\" + leader + "\\" + projectNO + "\\" + pImg;
+		File image = new File(filePath);
+
+		response.setHeader("Cache-Control", "no-cache");
+		response.addHeader("Content-disposition", "attachment; fileName=" + pImg);
+		FileInputStream in = new FileInputStream(image);
+		byte[] buffer = new byte[1024 * 8];
+		while (true) {
+			int count = in.read(buffer);
+			if (count == -1)
+				break;
+			out.write(buffer, 0, count);
+>>>>>>> upstream/master
 		}
 		in.close();
 		out.close();

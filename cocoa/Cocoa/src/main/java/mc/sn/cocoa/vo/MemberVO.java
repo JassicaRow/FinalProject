@@ -10,11 +10,19 @@ public class MemberVO {
 	private String phone;
 	private String pImg;
 	private String pContents;
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
 	public MemberVO() {
-		
+
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
 	public MemberVO(String id, String pwd, String name, String phone, String pImg, String pContents) {
 		this.id = id;
 		this.pwd = pwd;
@@ -71,7 +79,10 @@ public class MemberVO {
 	public void setpContents(String pContents) {
 		this.pContents = pContents;
 	}
+<<<<<<< HEAD
 	
 	
 	
+=======
+>>>>>>> upstream/master
 }
