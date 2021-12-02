@@ -39,7 +39,9 @@
 		<div class="container px-4 px-lg-5">
 
 			<!-- 로고 -->
-			<a class="navbar-brand" href="/cocoa/" style="color: black;"><b>CoCoa</b></a>
+			<a class="navbar-brand" href="/cocoa/" style="color: #CFFFE5; font-size:30px;"
+			onmouseover="this.style.color='black';" onmouseout="this.style.color='#CFFFE5';"><b>CoCoa</b></a>
+			
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 
 				<!-- 상단 가운데공간 지우면 안됌 -->

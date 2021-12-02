@@ -33,34 +33,36 @@
 
       <div class="container px-4 px-lg-5">
 
-         <!-- 로고 -->
-         <a class="navbar-brand" href="/cocoa/" style="color: black;"><b>CoCoa</b></a>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<!-- 로고 -->
+			<a class="navbar-brand" href="/cocoa/" style="color: #CFFFE5; font-size:30px;"
+			onmouseover="this.style.color='black';" onmouseout="this.style.color='#CFFFE5';"><b>CoCoa</b></a>
+			
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <!-- 상단 가운데공간 지우면 안됌 -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-            </ul>
-
-            <!-- 우측 상단 변경 -->
-            <c:choose>
-               <c:when test="${isLogOn == true && member != null}">
-                  <form action="/cocoa/logout" method="get" class="d-flex">
-                     <input name="My Page" class="btn btn-outline-dark" type="button"
-                        value="My Page" onClick="location.href='/cocoa/myPage'" /> <input
-                        name="logout" class="btn btn-outline-dark" type="submit"
-                        value="logout" />
-                  </form>
-               </c:when>
-               <c:otherwise>
-                  <form action="/cocoa/view_login" method="get" class="d-flex">
-                     <input name="login" class="btn btn-outline-dark" type="submit"
-                        value="log in" /> <input name="join"
-                        class="btn btn-outline-dark" type="button" value="Sign in"
-                        onClick="location.href='/cocoa/view_join'" />
-                  </form>
-               </c:otherwise>
-            </c:choose>
-
+				<!-- 상단 가운데공간 지우면 안됌 -->
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+				</ul>
+			
+	            <!-- 우측 상단 변경 -->
+	            <c:choose>
+	               <c:when test="${isLogOn == true && member != null}">
+	                  <form action="/cocoa/logout" method="get" class="d-flex">
+	                     <input name="My Page" class="btn btn-outline-dark" type="button"
+	                        value="My Page" onClick="location.href='/cocoa/myPage'" /> <input
+	                        name="logout" class="btn btn-outline-dark" type="submit"
+	                        value="logout" />
+	                  </form>
+	               </c:when>
+	               <c:otherwise>
+	                  <form action="/cocoa/view_login" method="get" class="d-flex">
+	                     <input name="login" class="btn btn-outline-dark" type="submit"
+	                        value="log in" /> <input name="join"
+	                        class="btn btn-outline-dark" type="button" value="Sign in"
+	                        onClick="location.href='/cocoa/view_join'" />
+	                  </form>
+	               </c:otherwise>
+	            </c:choose>
+			</div>
          </div>
       </div>
    </nav>
