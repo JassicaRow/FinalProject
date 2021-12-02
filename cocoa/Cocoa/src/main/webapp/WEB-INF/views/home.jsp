@@ -110,7 +110,7 @@
 
             <!-- 카탈로그 틀 -->
             <div class="col mb-5">
-               <div class="card h-100">
+               <div class="card h-100" style="border:1px solid;">
 
                   <!-- 언어 표시 -->
                   <div class="badge bg-dark text-white position-absolute"
@@ -118,7 +118,7 @@
 
                   <!-- 간판 이미지 (src=경로) -->
                   <img class="card-img-top" src="resources/image/kakao.png"
-                     alt="..." />
+                     height=200 />
 
                   <!-- 간판이미지 아래 정보 -->
                   <div class="card-body p-4">

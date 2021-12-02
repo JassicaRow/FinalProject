@@ -58,8 +58,8 @@
 		</div>
 	</nav>
 
-	<!-- 프로젝트 글 작성바 -->
-	<form action="${contextPath}/projectWrite" method="post" enctype="multipart/form-data">
+	<!-- 프로젝트 글 [조회, 수정, 삭제] 바 -->
+	<form method="post">
 		<section class="py-5">
 			<div class="container main-secction">
 				<div class="row">
@@ -70,6 +70,16 @@
 							<div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center" 
 								style="width:80%; height:100%; border:2px solid;background-color:#FFCCCC;">
 								
+								<!-- 후기 조회 이동 -->
+								<br><span style="float:right;">
+									<a href="/cocoa/view_reviewInfo">
+										<input type="button"
+										name="view_reviewInfo" value="후 기"
+										class="btn btn-third-dark"
+										style="font-size:13px; border-radius:12px;">
+									</a>
+								</span>
+							
 								<!-- 프로필 조회 이동 -->
 								<br><br><a href="/cocoa/view_profileInfo">
 									<img name="proImg" src="resources/image/kakao.png"
@@ -82,60 +92,60 @@
 									font-weight:700; background-color:#FFCCCC;"><br><br>
 									
 								<!-- kakao -->
-								<b>카카오톡 오픈채팅 :</b><br><br>
-								<input type="text" name="kakao" value="" placeholder="링크 입력"
-									style="text-align: center; border: 1; background-color:#FFCCCC;"><br> <br>
+								<!-- 네이버 대신 카톡링크 -->
+								<a href="http://naver.com">
+									<input type="button" name="kakaoLink" value="   대화하기   "
+									class="btn btn-third-dark"
+									style="text-align: center; border: 1; 
+									border-radius:12px;">
+								</a><br><br>
+								
+								<!-- 본인이면 수정(submit) / 삭제(버튼) 표시 -->
+								<!-- submit이 2개라서 formaction 사용 (post 방식) -->
+								<input type="submit" class="btn btn-third-dark" value="수정"
+									formaction="/cocoa/수정"> &nbsp;
+								<input type="submit" class="btn btn-third-dark" value="삭제"
+									formaction="/cocoa/삭제">
+								<br><br>
 							</div>
 						</div>
 					</div>
 	
-					<!-- 우측 내용 : pImg / pTitle / memberCount / pContents -->
+					<!-- 우측 내용 : pImg / pTitle / memberCount / level / pContents -->
 					<div class="card" style="width: 50rem; border:1px solid; background-color:#FFCC99">
 						
 						<!-- pImg -->
 						<div align="center">
 							<br><img id="preview" src="resources/image/sample.png" width=100%
 								height=300 style="border:1px solid;"/><br><br>
-								<label class="btn btn-outline-dark"
-								for="pImg"> 대표 이미지 변경 </label><input type="file" id="pImg"
-								name="pImg" onchange="readURL(this);" style="display: none;" />
-						</div>
+							</div>
 						
-						<!-- pTitle / memberCount / pContents 입력 -->
+						<!-- pTitle / memberCount / pContents 조회 -->
 						<div class="project">
 						
-							<!-- pTitle 입력 -->
-							<hr><input name="pTitle" type="text" placeholder="프로젝트명을 입력하세요."
-								style="border: 1; text-align: center; width: 100%;"><hr>
+							<!-- pTitle 표시 -->
+							<hr><input name="pTitle" type="text" value="ex) cocoa"
+								style="border: 0; text-align: center; width: 100%; background-color:#FFCC99;"><hr>
 							
-							<!-- memberCount 입력 -->
-							인원 : <input name="memberCount" type="number" placeholder="인원수를 입력하세요."
-									style="border: 1; width:30%;">&nbsp;<b>명</b><hr>
+							<!-- memberCount 표시 -->
+							인원 : <input name="memberCount" type="text" value="ex) 5"
+									style="border: 0; width:5%; text-align: center; background-color:#FFCC99;">
+									<b>명</b><hr>
 	
-							<!-- level 선택 -->
-							난이도 : <select style="text-align:center; width:30%;" name="level">
-									<option id="empty">-- 선택 --</option>
-									<option id="level1">하수</option>
-									<option id="level2">중수</option>
-									<option id="level3">고수</option>
-								</select><hr>
+							<!-- level 표시 -->
+							난이도 : <input name="level" type="text" value="ex) 고수"
+									style="border: 0; width:10%; text-align: center; background-color:#FFCC99;">
+									<hr>
 							
-							<!-- pContents 입력 -->
+							<!-- pContents 표시 -->
 							<!-- textarea 닫아주는거 붙여써야함 -->
-							세부 내용 : <br>
+							세부 내용 : <br><br>
 								<textarea name="pContents" rows="10" cols="20" 
-								placeholder="프로젝트 개요 및 포지션 별 자격요건을 써주세요."
-								style="border: 1;width: 100%;"></textarea><hr>
+								placeholder="ex) 프로젝트 개요 및 포지션 별 자격요건"
+								style="border: 1;width: 100%; background-color:#FFCC99;"></textarea><hr>
 								
 							<!-- map (일단비워둠) -->
-							<div><center>이곳은 맵 공간입니다.</center></div><hr>
-						</div>
-	
-						<!-- 작성(submit) + 취소(버튼) -->
-						<div class="card-body" style="text-align: center">
-							<button type="submit" class="btn btn-outline-dark">작성</button>
-							&nbsp;
-							<a href="/cocoa/" class="btn btn-outline-dark">취소</a>
+							<div style="text-align:center;">이곳은 맵 공간입니다.</div><hr>
 						</div>
 					</div>
 					

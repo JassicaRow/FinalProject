@@ -65,33 +65,34 @@
 			<div class="container main-secction">
 				<div class="row">
 				
-					<!-- 좌측 프로필 : coach~pImg / coach~name / 등급이미지 -->
+					<!-- 좌측 프로필 : coach~proImg / coach~name -->
 					<div class="col-md-3 col-sm-3 col-xs-12 user-profil-part pull-left">
 						<div class="row">
-							<div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
+							<div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center" 
+								style="width:80%; height:100%; border:2px solid;background-color:#FFCCCC;">
 							
-								<!-- 프로필 사진 클릭시 조회 가능 -->
-								<a href="/cocoa/view_profileInfo">
-									<img name="pImg" src="resources/image/kakao.png" width="120px" height="120px"><br><br>
+								<!-- 프로필 조회 이동 -->
+								<br><br><a href="/cocoa/view_profileInfo">
+									<img name="proImg" src="resources/image/kakao.png"
+										style="border:1px solid;" width="120px" height="120px"><br><br>
 								</a>
 	
 								<!-- coach -->
 								<input type="text" name="coach" value="coach" readonly
-									style="text-align: center; border: 0; background-color:#FFEBCD;"><br> <br>
-	
-								<!-- 등급이미지 : 좋아요수에 따른 변경 로직 필요 -->
-								<img name="tier" src="resources/image/tier.jpg" width="50px" height="50px"><br><br>
+									style="text-align: center; border: 0; 
+									font-weight:700; background-color:#FFCCCC;"><br><br>
 							</div>
 						</div>
 					</div>
 	
 					<!-- 우측 내용 : cImg / cTitle / basicPrice / cContents -->
-					<div class="card" style="width: 50rem;">
+					<div class="card" style="width: 50rem; border:1px solid; background-color:#FFCC99">
 						
 						<!-- cImg -->
 						<div align="center">
-							<br><img id="preview" src="..." width=90%
-								height=300 /><br><br> <label class="btn btn-outline-dark"
+							<br><img id="preview" src="resources/image/sample.png" width=100%
+								height=300 style="border:1px solid;"/><br><br> 
+								<label class="btn btn-outline-dark"
 								for="cImg"> 대표 이미지 변경 </label><input type="file" id="cImg"
 								name="cImg" onchange="readURL(this);" style="display: none;" />
 						</div>
