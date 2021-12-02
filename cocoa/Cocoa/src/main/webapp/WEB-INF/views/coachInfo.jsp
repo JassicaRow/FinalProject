@@ -112,7 +112,7 @@
 						</div>
 					</div>
 	
-					<!-- 우측 내용 : cImg / cTitle / basicPrice / level / cContents -->
+					<!-- 우측 내용 : cImg / cTitle / basicPrice / lang / cContents -->
 					<div class="card" style="width: 50rem; border:1px solid; background-color:#FFCC99">
 						
 						<!-- cImg -->
