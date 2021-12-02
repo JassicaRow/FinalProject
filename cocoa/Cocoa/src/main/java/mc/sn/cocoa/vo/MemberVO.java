@@ -10,20 +10,18 @@ public class MemberVO {
 	private String phone;
 	private String pImg;
 	private String pContents;
-	private int doLike;
 	
 	public MemberVO() {
 		
 	}
 	
-	public MemberVO(String id, String pwd, String name, String phone, String pImg, String pContents, int doLike) {
+	public MemberVO(String id, String pwd, String name, String phone, String pImg, String pContents) {
 		this.id = id;
 		this.pwd = pwd;
 		this.name = name;
 		this.phone = phone;
 		this.pImg = pImg;
 		this.pContents = pContents;
-		this.doLike = doLike;
 	}
 
 	public String getId() {
@@ -72,14 +70,6 @@ public class MemberVO {
 
 	public void setpContents(String pContents) {
 		this.pContents = pContents;
-	}
-
-	public int getDoLike() {
-		return doLike;
-	}
-
-	public void setDoLike(int doLike) {
-		this.doLike = doLike;
 	}
 	
 	
